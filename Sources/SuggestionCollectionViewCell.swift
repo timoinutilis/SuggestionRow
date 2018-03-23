@@ -38,7 +38,7 @@ open class SuggestionCollectionViewCell<T: SuggestionValue>: UICollectionViewCel
         label.minimumScaleFactor = 0
         label.adjustsFontSizeToFitWidth = true
         label.textColor = .white
-        label.backgroundColor = .blue
+        label.backgroundColor = tintColor
         label.layer.masksToBounds = true
         label.layer.cornerRadius = 5
         
@@ -57,5 +57,10 @@ open class SuggestionCollectionViewCell<T: SuggestionValue>: UICollectionViewCel
         label.frame = CGRect(x: 0, y: 0, width: 180, height: 30)
         label.sizeToFit()
         return CGSize(width: label.frame.width + 8, height: 30)
+    }
+    
+    open override func tintColorDidChange() {
+        super.tintColorDidChange()
+        label.backgroundColor = tintColor
     }
 }

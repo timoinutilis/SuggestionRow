@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-open class SuggestionTableCell<T: SuggestionValue, TableViewCell: UITableViewCell>: SuggestionCell<T>, UITableViewDelegate, UITableViewDataSource where TableViewCell: EurekaSuggestionTableViewCell, TableViewCell.S == T {
+open class SuggestionTableCell<T, TableViewCell: UITableViewCell>: SuggestionCell<T>, UITableViewDelegate, UITableViewDataSource where TableViewCell: EurekaSuggestionTableViewCell, TableViewCell.S == T {
     
     /// callback that can be used to customize the table cell.
     public var customizeTableViewCell: ((TableViewCell) -> Void)?
